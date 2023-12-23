@@ -43,3 +43,22 @@ function wordcount_count_words($content){
     return $content;
 }
 add_filter( 'the_content', 'wordcount_count_words' );
+
+//Word reading time function
+function wordcount_reading_time( $content ) {
+    $stripped_content = strip_tags( $content );
+    $wordn            = str_word_count( $stripped_content );
+    $reading_minute   = floor( $wordn / 200 );
+    $reading_seconds  = floor( $wordn % 200 / ( 200 / 60 ) );
+    $is_visible       = apply_filters( 'wordcount_display_readingtime', 1 );
+    if ( $is_visible ) {
+        $label   = __( 'Total Reading Time', 'word-count' );
+        $label   = apply_filters( "wordcount_readingtime_heading", $label );
+        $tag     = apply_filters( 'wordcount_readingtime_tag', 'h4' );
+        $content .= sprintf( '<%s>%s: %s minutes %s seconds</%s>', $tag, $label, $reading_minute, $reading_seconds, $tag );
+    }
+
+    return $content;
+}
+
+add_filter( 'the_content', 'wordcount_reading_time' );
