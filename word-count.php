@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:       Word Count
- * Plugin URI:        https://criqal.com/
+ * Plugin URI:        https://classysystem.com/
  * Description:       Handle the basics with this plugin.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Gazi Akter
- * Author URI:        https://gaziakter/
+ * Author URI:        https://gaziakter.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://criqal.com/
